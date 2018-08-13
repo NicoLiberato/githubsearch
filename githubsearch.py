@@ -8,10 +8,6 @@ def main():
         print("++++++   github issues retrieval  ++++++ ")
         print("++++++   print the first 30 issues in Github for a certain topic  ++++++ ")
 
-        ''' playground '''
-        
-        ''' produce input '''
-
         topic_string = raw_input("Please,insert the topic that you want to explore in github\t");
         print("++++++   credentials   ++++++ ")
         account_name= raw_input("Please, insert your user name in Github\t");
@@ -30,12 +26,9 @@ def main():
         for i in range(len(repos)):
                 owners.append(str(logins[i] + "/" + repo_names[i]));
 
-        #print(owners);
+ 
         print("produced and input of " + str(len(owners)) + " pairs of author/owner using the topic " + topic_string);
-
-        
-        ''' end produce input '''
-
+       
         ''' skeleton of the json document ''' 
         JSON_DATA = """ {
         "issues" : {
