@@ -16,7 +16,6 @@ def main():
         r = requests.get('https://api.github.com/search/repositories?q=topic:' + topic_string);
         
         data = r.json();
-        #print(json.dumps(data, sort_keys=True, indent=4))
         repos = data["items"];
         logins =  [x["owner"]["login"] for x in repos];
         repo_names = [x["name"]  for x in repos];
@@ -53,7 +52,6 @@ def main():
         for x in owners[0:10:1]:
                 r = requests.get('https://api.github.com/search/issues?q=repo:' + x,auth=(account_name,password));
                 data = r.json();
-                #print(json.dumps(data, sort_keys=True, indent=4))
                 items = items + data["items"]
                 ids = ids + [ x["id"] for x in items ];
                 state = state + [ x["state"] for x in items ];
@@ -79,16 +77,9 @@ def main():
         handle_data = json.loads(JSON_DATA);
         my_dict = dict(handle_data);
         my_dict["issues"] = elements;
-        #my_dict["top_day"] = top_day;
-        #my_dict["top_day"]["occurences"] = {};
-
-
-        #print(json.dumps(my_dict, sort_keys=True, indent=4))
         days = [elements[i]["created_at"] for i in range(0,len(elements))];
         days= [ x[0:10:1] for x in created_at];
-        #print(days);
         occurences = [x for x in days if days.count(x) > 1]
-        #print(occurences)
         my_dict["top_day"]["day"]= max(occurences);
        
         counter = days.count(max(occurences));
