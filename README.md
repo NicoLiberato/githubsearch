@@ -17,6 +17,6 @@ From the online documentation of Github : "The Search API has a custom rate limi
 For unauthenticated requests, the rate limit allows you to make up to 10 requests per minute." 
 This can be modified in the code using the following request 
 
- 	r = requests.get('API_REQUEST' + topic_string, auth=('USER', 'PASSWD'));
+ 	r = requests.get('API_REQUEST' + topic_string, token);
 
  
