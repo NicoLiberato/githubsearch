@@ -20,9 +20,6 @@ def get_github_token():
         token = getpass.getpass("Enter your GitHub Personal Access Token: ")
     return token
 
-
-
-
 def print_curl_command(method, url, headers, data=None):
     """Print the equivalent curl command for a given request."""
     header_args = ' '.join([f"-H '{k}: {v}'" for k, v in headers.items()])
