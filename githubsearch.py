@@ -1,6 +1,5 @@
 #! /usr/bin/env python3
 
-
 import requests
 import os
 import json
@@ -29,6 +28,9 @@ def print_curl_command(method, url, headers, data=None):
 def search_developer(username):
     """Search for a developer on GitHub and return their information."""
     url = f"{API_URL}/users/{username}"
+    
+    GITHUB_TOKEN = get_github_token()
+    
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
     
     print("\nEquivalent curl command for searching developer:")
@@ -42,11 +44,10 @@ def search_developer(username):
 
 def main():
     
-    GITHUB_TOKEN = get_github_token()
     
-    username = input("Enter the developer nicknamein Github: ")
+    username = input("Enter the developer nickname in Github: ")
     developer = search_developer(username)
     print(developer)    
 
 if __name__ == "__main__":
-    main()  
+    main()
