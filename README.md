@@ -1,5 +1,5 @@
 
-![octopusUNO](images/octopusUNO.jpg)
+![octopusUNO](images/octopusUNO.jpg =300x200)
 
 ## githubsearch
  
