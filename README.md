@@ -1,7 +1,7 @@
 
 ![octopusUNO](images/octopusUNO.jpg)
 
-## githubsearch
+# Github Search
  
  A simple application for discover developers and their own repositories in github
 
